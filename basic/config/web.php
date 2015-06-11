@@ -37,6 +37,24 @@ $config = [
                 ],
             ],
         ],
+        'authClientCollection' => [
+            'class' => 'yii\authclient\Collection',
+            'clients' => [
+                'google' => [
+                    'class' => 'yii\authclient\clients\GoogleOpenId'
+                ],
+                'facebook' => [
+                    'class' => 'yii\authclient\clients\Facebook',
+                    'clientId' => '883252061747010',
+                    'clientSecret' => '0990e81896f943afe5f754bd800a99dc',
+                ],
+                'qq' => [
+                    'class'=>'common\components\QqOAuth',
+                    'clientId'=>'1104698398',
+                    'clientSecret'=>'o1l4BFyC0XgPhoUD'
+                ],
+            ],
+        ],
         'db' => require(__DIR__ . '/db.php'),
     ],
     'params' => $params,
