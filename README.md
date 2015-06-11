@@ -9,7 +9,7 @@ Yii 2 整合 leanCloud登陆、注册、第三方登陆
 问题讨论，反馈QQ群：464984083
 
 演示地址：
-http://yii2_leancloud.odube.com
+http://yii2leancloud.odube.com
 
 
 
