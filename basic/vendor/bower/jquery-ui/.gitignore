@@ -1,4 +1,4 @@
-components
-composer.lock
-vendor
+#components
+#composer.lock
+#vendor
 .DS_Store

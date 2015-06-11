@@ -13,9 +13,9 @@ nbproject
 Thumbs.db
 
 # composer files
-/composer.lock
-/vendor
-composer.phar
+#/composer.lock
+#/vendor
+#composer.phar
 
 # Mac DS_Store Files
 .DS_Store

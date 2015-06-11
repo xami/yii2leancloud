@@ -10,7 +10,7 @@ dist_temp
 node_modules
 npm-debug.log
 
-bower_components
+#bower_components
 
 *.iml
 .idea

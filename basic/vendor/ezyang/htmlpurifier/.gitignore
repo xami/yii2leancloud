@@ -20,7 +20,7 @@ docs/doxygen*
 *.htmlt.ini
 *.patch
 /*.php
-vendor
+#vendor
 composer.lock
 *.rej
 *.orig
