@@ -29,18 +29,17 @@
     "simple-html-dom/simple-html-dom": "dev-master",
     "shuber/curl": "dev-master",
     "nategood/httpful": "*",
-    "yiisoft/yii2-authclient": "*"
+    "yiisoft/yii2-authclient": "*",
+    "bower-asset/jquery": "@stable",
+    "bower-asset/bootstrap": "@stable",
+    "bower-asset/jquery-ui": "@stable",
+    "bower-asset/jquery.inputmask": "@stable",
+    "bower-asset/punycode": "@stable"
   },
   "autoload": {
     "files": [
-      "vendor/simple-html-dom/simple-html-dom/simple_html_dom.php"
+      "vendor/simple-html-dom/simple-html-dom/simple-html-dom.php"
     ]
-  },
-  "require-dev": {
-    "yiisoft/yii2-codeception": "*",
-    "yiisoft/yii2-debug": "*",
-    "yiisoft/yii2-gii": "*",
-    "yiisoft/yii2-faker": "*"
   },
   "require-dev": {
     "yiisoft/yii2-codeception": "*",

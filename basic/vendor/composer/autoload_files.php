@@ -8,5 +8,6 @@ $baseDir = dirname($vendorDir);
 return array(
     $vendorDir . '/ezyang/htmlpurifier/library/HTMLPurifier.composer.php',
     $vendorDir . '/swiftmailer/swiftmailer/lib/swift_required.php',
-    $vendorDir . '/simple-html-dom/simple-html-dom/simple_html_dom.php',
+    $vendorDir . '/shuber/curl/curl.php',
+    $vendorDir . '/simple-html-dom/simple-html-dom/simple-html-dom.php',
 );

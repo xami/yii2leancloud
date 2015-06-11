@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "851b4d549555eb50fbc752bf54c38844",
+    "hash": "b2e2618fdf5a7a36a4fcda3d242b2a81",
     "packages": [
         {
             "name": "bower-asset/bootstrap",
@@ -101,6 +101,31 @@
                 "jquery",
                 "library"
             ]
+        },
+        {
+            "name": "bower-asset/jquery-ui",
+            "version": "1.11.4",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/components/jqueryui.git",
+                "reference": "c34f8dbf3ba57b3784b93f26119f436c0e8288e1"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/components/jqueryui/zipball/c34f8dbf3ba57b3784b93f26119f436c0e8288e1",
+                "reference": "c34f8dbf3ba57b3784b93f26119f436c0e8288e1",
+                "shasum": ""
+            },
+            "require": {
+                "bower-asset/jquery": ">=1.6"
+            },
+            "type": "bower-asset-library",
+            "extra": {
+                "bower-asset-main": [
+                    "jquery-ui.js"
+                ],
+                "bower-asset-ignore": []
+            }
         },
         {
             "name": "bower-asset/jquery.inputmask",
@@ -1358,7 +1383,12 @@
     "minimum-stability": "dev",
     "stability-flags": {
         "simple-html-dom/simple-html-dom": 20,
-        "shuber/curl": 20
+        "shuber/curl": 20,
+        "bower-asset/jquery": 0,
+        "bower-asset/bootstrap": 0,
+        "bower-asset/jquery-ui": 0,
+        "bower-asset/jquery.inputmask": 0,
+        "bower-asset/punycode": 0
     },
     "prefer-stable": false,
     "prefer-lowest": false,

@@ -1348,17 +1348,17 @@
     },
     {
         "name": "bower-asset/jquery.inputmask",
-        "version": "3.x-dev",
-        "version_normalized": "3.9999999.9999999.9999999-dev",
+        "version": "3.1.63",
+        "version_normalized": "3.1.63.0",
         "source": {
             "type": "git",
             "url": "https://github.com/RobinHerbots/jquery.inputmask.git",
-            "reference": "074c4c17212e62ebab2b984ab03ba8f7a7e7533b"
+            "reference": "c40c7287eadc31e341ebbf0c02352eb55b9cbc48"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/RobinHerbots/jquery.inputmask/zipball/074c4c17212e62ebab2b984ab03ba8f7a7e7533b",
-            "reference": "074c4c17212e62ebab2b984ab03ba8f7a7e7533b",
+            "url": "https://api.github.com/repos/RobinHerbots/jquery.inputmask/zipball/c40c7287eadc31e341ebbf0c02352eb55b9cbc48",
+            "reference": "c40c7287eadc31e341ebbf0c02352eb55b9cbc48",
             "shasum": ""
         },
         "require": {
@@ -1368,12 +1368,11 @@
         "extra": {
             "bower-asset-main": [
                 "./dist/inputmask/jquery.inputmask.js",
-                "./dist/inputmask/inputmask.js",
-                "./dist/inputmask/inputmask.extensions.js",
-                "./dist/inputmask/inputmask.date.extensions.js",
-                "./dist/inputmask/inputmask.numeric.extensions.js",
-                "./dist/inputmask/inputmask.phone.extensions.js",
-                "./dist/inputmask/inputmask.regex.extensions.js"
+                "./dist/inputmask/jquery.inputmask.extensions.js",
+                "./dist/inputmask/jquery.inputmask.date.extensions.js",
+                "./dist/inputmask/jquery.inputmask.numeric.extensions.js",
+                "./dist/inputmask/jquery.inputmask.phone.extensions.js",
+                "./dist/inputmask/jquery.inputmask.regex.extensions.js"
             ],
             "bower-asset-ignore": [
                 "**/.*",
@@ -1400,5 +1399,32 @@
             "mask",
             "plugins"
         ]
+    },
+    {
+        "name": "bower-asset/jquery-ui",
+        "version": "1.11.4",
+        "version_normalized": "1.11.4.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/components/jqueryui.git",
+            "reference": "c34f8dbf3ba57b3784b93f26119f436c0e8288e1"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/components/jqueryui/zipball/c34f8dbf3ba57b3784b93f26119f436c0e8288e1",
+            "reference": "c34f8dbf3ba57b3784b93f26119f436c0e8288e1",
+            "shasum": ""
+        },
+        "require": {
+            "bower-asset/jquery": ">=1.6"
+        },
+        "type": "bower-asset-library",
+        "extra": {
+            "bower-asset-main": [
+                "jquery-ui.js"
+            ],
+            "bower-asset-ignore": []
+        },
+        "installation-source": "dist"
     }
 ]
