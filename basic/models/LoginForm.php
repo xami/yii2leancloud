@@ -13,8 +13,6 @@ class LoginForm extends Model
     public $username;
     public $password;
     public $rememberMe = true;
-    public $email;
-    public $mobilePhoneNumber;
 
     private $_user = false;
 
@@ -46,8 +44,13 @@ class LoginForm extends Model
         if (!$this->hasErrors()) {
             $user = $this->getUser();
 
-            if (!$user || !$user->validatePassword($this->password)) {
-                $this->addError($attribute, 'Incorrect username or password.');
+            if (!empty($user)) {
+                $result = $user->validatePassword($this->password);
+                if($result !== true){
+                    $this->addError($attribute, $result->error);
+                }
+            }else{
+                $this->addError($attribute, 'Not find the Username');
             }
         }
     }

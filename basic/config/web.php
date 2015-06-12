@@ -57,6 +57,17 @@ $config = [
                 'master'=>'58rze1s4ahf41zdqhvfcf800cm65e6isidwkfe2llgx9bfj9',
             ]
         ],
+        'smarty'=>[
+            'class' => 'yii\smarty\ViewRenderer',
+        ],
+        'view' => [
+            'renderers' => [
+                'tpl' => [
+                    'class' => 'yii\smarty\ViewRenderer',
+                    //'cachePath' => '@runtime/Smarty/cache',
+                ],
+            ],
+        ],
         'authClientCollection' => [
             'class' => 'yii\authclient\Collection',
             'clients' => [
@@ -90,20 +101,6 @@ if (YII_ENV_DEV) {
     $config['modules']['gii']['allowedIPs'] = ['127.0.0.1', '::1', '192.168.0.*', '10.0.2.*'];
 }
 
-function pr($data=array(), $end='', $stop=false)
-{
-    echo '<pre>';
-    print_r($data);
-    echo $end;
-    if($stop) die;
-}
-
-function pd($data=array(), $end='', $stop=true)
-{
-    echo '<pre>';
-    print_r($data);
-    echo $end;
-    if($stop) die;
-}
+include_once(__DIR__.'/tools.php');
 
 return $config;

@@ -2,6 +2,8 @@
 
 namespace app\models;
 
+use Yii;
+
 class User extends \yii\base\Model implements \yii\web\IdentityInterface
 {
     public $id;
@@ -43,9 +45,27 @@ class User extends \yii\base\Model implements \yii\web\IdentityInterface
     {
         $user = Users::findOne(['username'=>$username]);
 
+        //先本地查询，再接口查询
         if(!empty($user)){
-            return $user->attributes;
+            $this->attributes = $user->attributes;
+            return $this;
+        }else{
+            $user_cloud = Yii::$app->LeanCloud->get('users', ['username'=>$username]);
+            if(!empty($user_cloud->results)){
+                $user = new Users;
+                $user->username = $user_cloud->username;
+                $user->email = $user_cloud->email;
+                $user->mobilePhoneNumber = $user_cloud->mobilePhoneNumber;
+                $user->superuser = 0;
+                $user->status = 1;
+                $user->create_at = date("Y-m-d H:i:s", strtotime($this->user_info->createdAt));
+                $user->lastvisit_at = date("Y-m-d H:i:s", strtotime($this->user_info->updatedAt));
+                $user->save();
+                $this->attributes = $user->attributes;
+                return $this;
+            }
         }
+
         return null;
     }
 
@@ -81,7 +101,11 @@ class User extends \yii\base\Model implements \yii\web\IdentityInterface
      */
     public function validatePassword($password)
     {
-
-        return $this->password === $password;
+        $r = Yii::$app->LeanCloud->get('login', ['username'=>$this->username, 'password'=>$this->password]);
+        if(isset($r->code)){
+            return $r;
+        }else{
+            return true;
+        }
     }
 }
