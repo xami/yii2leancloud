@@ -58,12 +58,13 @@ $config = [
             ]
         ],
         'smarty'=>[
-            'class' => 'yii\smarty\ViewRenderer',
+            'class' => 'app\models\Smarty',
         ],
         'view' => [
             'renderers' => [
                 'tpl' => [
-                    'class' => 'yii\smarty\ViewRenderer',
+//                    'class' => 'yii\smarty\ViewRenderer',
+                    'class' => 'app\models\Smarty',
                     //'cachePath' => '@runtime/Smarty/cache',
                 ],
             ],

@@ -64,7 +64,6 @@ class SiteController extends Controller
             }
         }
 
-        $this->view->beforeRender();
 
         pd(Yii::$app->view->renderers['tpl']);
         Yii::$app->view->renderers['tpl'] = Yii::createObject(Yii::$app->view->renderers['tpl']);
