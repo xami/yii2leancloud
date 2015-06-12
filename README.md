@@ -14,7 +14,27 @@ http://yii2leancloud.odube.com
 
 
 安装步骤：
+-------------------
 1、删除 basic/composer.lock，执行composer install更新依赖
+
+2、安装数据库(`mobilePhoneNumber`配合leancloud的数据库存储本地的手机号)
+
+``
+ CREATE TABLE `users` (
+   `id` int(11) NOT NULL AUTO_INCREMENT,
+   `username` varchar(20) NOT NULL DEFAULT '',
+   `password` varchar(128) NOT NULL DEFAULT '',
+   `email` varchar(128) NOT NULL,
+   `mobilePhoneNumber` varchar(32) NOT NULL,
+   `activkey` varchar(128) NOT NULL DEFAULT '',
+   `superuser` int(1) NOT NULL DEFAULT '0',
+   `status` int(1) NOT NULL DEFAULT '0',
+   `create_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+   `lastvisit_at` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
+   PRIMARY KEY (`id`),
+   UNIQUE KEY `user_username` (`username`)
+ ) ENGINE=InnoDB AUTO_INCREMENT=151240 DEFAULT CHARSET=utf8; 
+``
 
 
 

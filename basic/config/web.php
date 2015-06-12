@@ -7,6 +7,17 @@ $config = [
     'basePath' => dirname(__DIR__),
     'bootstrap' => ['log'],
     'components' => [
+        'urlManager'=>[
+            'class' => 'yii\web\UrlManager',
+            'enablePrettyUrl'=>true,
+            'showScriptName' => false,
+//            'enableStrictParsing'=>true,
+//            'suffix'=>'.html',
+            'rules'=>[
+                "<controller:\w+>/<action:\w+>/<id:\d+>"=>"<controller>/<action>",
+                "<controller:\w+>/<action:\w+>"=>"<controller>/<action>"
+            ],
+        ],
         'request' => [
             // !!! insert a secret key in the following (if it is empty) - this is required by cookie validation
             'cookieValidationKey' => 'b96HJExAdPcKvPLkMZGJEJbN3OoxFLmN',
@@ -37,6 +48,15 @@ $config = [
                 ],
             ],
         ],
+        'LeanCloud' => [
+            'class' => 'app\models\LeanCloud',
+            'config' => [
+                'base'=>'https://api.leancloud.cn/1.1/',
+                'id'=>'2oiv7k7rslom701edx7ccit3jp9zy3z9k4jz351fb0cqvem0',
+                'key'=>'yxp2mqqv8i0p02b4cukh1fz68cn9yz43xb27elopbtuugqhp',
+                'master'=>'58rze1s4ahf41zdqhvfcf800cm65e6isidwkfe2llgx9bfj9',
+            ]
+        ],
         'authClientCollection' => [
             'class' => 'yii\authclient\Collection',
             'clients' => [
@@ -49,7 +69,7 @@ $config = [
                     'clientSecret' => '88cdfea142efcb079a70e21b36fd5855',
                 ],
                 'qq' => [
-                    'class'=>'common\components\QqOAuth',
+                    'class'=>'app\models\QqOAuth',
                     'clientId'=>'1104698398',
                     'clientSecret'=>'o1l4BFyC0XgPhoUD'
                 ],
@@ -66,7 +86,24 @@ if (YII_ENV_DEV) {
     $config['modules']['debug'] = 'yii\debug\Module';
 
     $config['bootstrap'][] = 'gii';
-    $config['modules']['gii'] = 'yii\gii\Module';
+    $config['modules']['gii']['class'] = 'yii\gii\Module';
+    $config['modules']['gii']['allowedIPs'] = ['127.0.0.1', '::1', '192.168.0.*', '10.0.2.*'];
+}
+
+function pr($data=array(), $end='', $stop=false)
+{
+    echo '<pre>';
+    print_r($data);
+    echo $end;
+    if($stop) die;
+}
+
+function pd($data=array(), $end='', $stop=true)
+{
+    echo '<pre>';
+    print_r($data);
+    echo $end;
+    if($stop) die;
 }
 
 return $config;
