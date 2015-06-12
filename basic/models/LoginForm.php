@@ -13,6 +13,7 @@ class LoginForm extends Model
     public $username;
     public $password;
     public $rememberMe = true;
+    public $sessionToken;
 
     private $_user = false;
 
@@ -45,6 +46,7 @@ class LoginForm extends Model
             $user = $this->getUser();
 
             if (!empty($user)) {
+                pd($user);
                 $result = $user->validatePassword($this->password);
                 if($result !== true){
                     $this->addError($attribute, $result->error);
@@ -79,5 +81,15 @@ class LoginForm extends Model
         }
 
         return $this->_user;
+    }
+
+    public function load($data, $formName = null)
+    {
+        $this->username = $data->username;
+        $this->password = $data->password;
+        $this->rememberMe = $data->rememberMe;
+        $this->sessionToken = $data->sessionToken;
+
+        return $this->getUser();
     }
 }

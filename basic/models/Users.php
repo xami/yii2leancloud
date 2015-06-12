@@ -12,6 +12,7 @@ use Yii;
  * @property string $password
  * @property string $email
  * @property string $mobilePhoneNumber
+ * @property string $sessionToken
  * @property string $activkey
  * @property integer $superuser
  * @property integer $status
@@ -40,6 +41,7 @@ class Users extends \yii\db\ActiveRecord
             [['username'], 'string', 'max' => 20],
             [['password', 'email', 'activkey'], 'string', 'max' => 128],
             [['mobilePhoneNumber'], 'string', 'max' => 32],
+            [['sessionToken'], 'string', 'max' => 64],
             [['username'], 'unique']
         ];
     }
@@ -55,6 +57,7 @@ class Users extends \yii\db\ActiveRecord
             'password' => 'Password',
             'email' => 'Email',
             'mobilePhoneNumber' => 'Mobile Phone Number',
+            'sessionToken' => 'sessionToken',
             'activkey' => 'Activkey',
             'superuser' => 'Superuser',
             'status' => 'Status',

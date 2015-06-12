@@ -2,6 +2,8 @@
 
 namespace app\controllers;
 
+use app\models\LoginForm;
+use app\models\User;
 use Yii;
 use yii\filters\AccessControl;
 use yii\web\Controller;
@@ -55,16 +57,14 @@ class ApiController extends \yii\web\Controller
         //处理登陆,绕过有登陆则直接取登陆信息
         if($type=='get' && $class=='login'){
             if(!isset($r->code)){
-                //重新登陆
+                // 接口验证登陆成功
                 if(isset($r->sessionToken) && isset($r->objectId)){
-                    // 绕过登陆机制
-                    $identity=Yii::$app->user->identity;
-                    $identity->authenticate($r);
-                    // 把用户username、objectId存model里面
-                    $duration=$data['rememberMe'] ? Yii::$app->params['rememberMeTime'] : Yii::$app->params['login_time'];
-                    Yii::$app->user->login($identity, $duration);
-                    foreach ($r as $attrName=>$attrValue) {
-                        Yii::$app->user->setState($attrName,$attrValue);
+                    $r->rememberMe = $data['rememberMe'];
+                    $r->password = $data['password'];
+                    // 实现本地登录
+                    $model=new LoginForm();
+                    if ($model->load($r,'users') && $model->login()) {
+
                     }
                 }else{
 

@@ -19,7 +19,7 @@ class User extends \yii\base\Model implements \yii\web\IdentityInterface
     public static function findIdentity($id)
     {
         $user = Users::findOne($id);
-        return empty($user) ? $user->attributes : null;
+        return empty($user) ? $user : null;
     }
 
     /**
@@ -30,7 +30,7 @@ class User extends \yii\base\Model implements \yii\web\IdentityInterface
         $user = Users::findOne(['sessionToken'=>$token]);
 
         if(!empty($user)){
-            return $user->attributes;
+            return $user;
         }
         return null;
     }
@@ -45,28 +45,51 @@ class User extends \yii\base\Model implements \yii\web\IdentityInterface
     {
         $user = Users::findOne(['username'=>$username]);
 
+        //只信任直接调取接口的数据
+        $user_cloud=new \stdClass();
+        $get_cloud = Yii::$app->LeanCloud->get('users', ['username'=>$username]);
+        if(isset($get_cloud->results[0])){
+            $user_cloud = $get_cloud->results[0];
+        }
+
         //先本地查询，再接口查询
         if(!empty($user)){
-            $this->attributes = $user->attributes;
-            return $this;
+            if(!empty($user_cloud)){
+                $user->email = isset($user_cloud->email) ? $user_cloud->email : '';
+                $user->mobilePhoneNumber = isset($user_cloud->mobilePhoneNumber) ? $user_cloud->mobilePhoneNumber : '';
+//                $user->sessionToken = $user_cloud->sessionToken;
+                $user->lastvisit_at = date("Y-m-d H:i:s", strtotime($user_cloud->updatedAt));
+                if($user->save()){
+                    $this->id = $user->id;
+                    $this->email = $user_cloud->email;
+                    $this->mobilePhoneNumber = $user_cloud->mobilePhoneNumber;
+//                    $this->sessionToken = $user_cloud->sessionToken;
+                }
+                return new ($this);
+            }
         }else{
-            $user_cloud = Yii::$app->LeanCloud->get('users', ['username'=>$username]);
-            if(!empty($user_cloud->results)){
+            if(!empty($user_cloud)){
                 $user = new Users;
                 $user->username = $user_cloud->username;
-                $user->email = $user_cloud->email;
-                $user->mobilePhoneNumber = $user_cloud->mobilePhoneNumber;
+                $user->email = isset($user_cloud->email) ? $user_cloud->email : '';
+                $user->mobilePhoneNumber = isset($user_cloud->mobilePhoneNumber) ? $user_cloud->mobilePhoneNumber : '';
                 $user->superuser = 0;
                 $user->status = 1;
-                $user->create_at = date("Y-m-d H:i:s", strtotime($this->user_info->createdAt));
-                $user->lastvisit_at = date("Y-m-d H:i:s", strtotime($this->user_info->updatedAt));
-                $user->save();
-                $this->attributes = $user->attributes;
+                $user->create_at = date("Y-m-d H:i:s", strtotime($user_cloud->createdAt));
+                $user->lastvisit_at = date("Y-m-d H:i:s", strtotime($user_cloud->updatedAt));
+//                $user->sessionToken = $user_cloud->sessionToken;
+
+                if($user->save()){
+                    $this->id = $user->id;
+                    $this->email = $user_cloud->email;
+                    $this->mobilePhoneNumber = $user_cloud->mobilePhoneNumber;
+//                    $this->sessionToken = $user_cloud->sessionToken;
+                }
                 return $this;
             }
         }
 
-        return null;
+        return false;
     }
 
     /**
