@@ -242,4 +242,6 @@ return array(
     'Your Sioeye account has been activated. You can go back to Sioeye to login now.' => '您在Sioeye注册的账号已经成功激活。您可以返回首页登陆。',
     'Email validation error' => '邮箱验证出错',
 
+
+
 );

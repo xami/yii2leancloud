@@ -11,8 +11,8 @@ $config = [
             'class' => 'yii\web\UrlManager',
             'enablePrettyUrl'=>true,
             'showScriptName' => false,
-//            'enableStrictParsing'=>true,
-//            'suffix'=>'.html',
+            'enableStrictParsing'=>true,
+            'suffix'=>'.html',
             'rules'=>[
                 "<controller:\w+>/<action:\w+>/<id:\d+>"=>"<controller>/<action>",
                 "<controller:\w+>/<action:\w+>"=>"<controller>/<action>"
@@ -57,15 +57,22 @@ $config = [
                 'master'=>'58rze1s4ahf41zdqhvfcf800cm65e6isidwkfe2llgx9bfj9',
             ]
         ],
-        'smarty'=>[
-            'class' => 'app\models\Smarty',
-        ],
         'view' => [
             'renderers' => [
                 'tpl' => [
 //                    'class' => 'yii\smarty\ViewRenderer',
-                    'class' => 'app\models\Smarty',
+                    'class' => 'yii\smarty\ViewRenderer',
                     //'cachePath' => '@runtime/Smarty/cache',
+                ],
+                'twig' => [
+                    'class' => 'yii\twig\ViewRenderer',
+                    'cachePath' => '@runtime/Twig/cache',
+                    // Array of twig options:
+                    'options' => [
+                        'auto_reload' => true,
+                    ],
+                    'globals' => ['html' => '\yii\helpers\Html'],
+                    'uses' => ['yii\bootstrap'],
                 ],
             ],
         ],

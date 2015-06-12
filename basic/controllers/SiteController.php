@@ -8,7 +8,6 @@ use yii\web\Controller;
 use yii\filters\VerbFilter;
 use app\models\LoginForm;
 use app\models\ContactForm;
-use Smarty;
 
 class SiteController extends Controller
 {
@@ -49,11 +48,11 @@ class SiteController extends Controller
     }
 
 
-    public $smarty;
+    public $data;
     public function init(){
         parent::init();
 
-        $this->layout = '/mobile/m';
+        $this->layout = 'mobile.tpl';
         $return_url = Yii::$app->request->get('return_url', '');
         if(empty($return_url)){
             if(isset($_SERVER['HTTP_REFERER'])){
@@ -64,15 +63,15 @@ class SiteController extends Controller
             }
         }
 
+        $this->data = [
+            'return_url'=>$return_url,
+        ];
 
-        pd(Yii::$app->view->renderers['tpl']);
-        Yii::$app->view->renderers['tpl'] = Yii::createObject(Yii::$app->view->renderers['tpl']);
-        $this->smarty = Yii::$app->smarty;
-        $this->smarty->assign('return_url',$return_url);
     }
 
     public function actionIndex()
     {
+        $this->layout = 'main';
         return $this->render('index');
     }
 
@@ -120,7 +119,7 @@ class SiteController extends Controller
 
     public function actionLogin(){
 
-        $this->render('/mobile/login.tpl');
+        return $this->render('/mobile/login.tpl', $this->data);
     }
 
     public function actionRegister(){

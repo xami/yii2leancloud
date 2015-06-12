@@ -242,9 +242,9 @@
                     }else{
                         alert('{__('Registration is successful, please login')}');
                         if(_return_url != ''){
-                            location.href = 'http://{$SIO_WEB_DOMAIN}/mobile/login?return_url='+_return_url;
+                            location.href = 'http://'+document.domain+'/mobile/login?return_url='+_return_url;
                         }else{
-                            location.href = 'http://{$SIO_WEB_DOMAIN}/mobile/login';
+                            location.href = 'http://'+document.domain+'/mobile/login';
                         }
                     }
                 }
@@ -489,9 +489,9 @@
                         alert('{__('Change the password successfully, Please Login use the new password')}');
 
                         if(_return_url != ''){
-                            location.href = 'http://{$SIO_WEB_DOMAIN}/mobile/login?return_url='+_return_url;
+                            location.href = 'http://'+document.domain+'/mobile/login?return_url='+_return_url;
                         }else{
-                            location.href = 'http://{$SIO_WEB_DOMAIN}/mobile/login';
+                            location.href = 'http://'+document.domain+'/mobile/login';
                         }
                     }
                 }
@@ -701,7 +701,7 @@
                     if(_return_url != ''){
                         location.href = _return_url;
                     }else{
-                        location.href = 'http://{$SIO_WEB_DOMAIN}';
+                        location.href = 'http://'+document.domain+'/';
                     }
 
                     if(self != top){

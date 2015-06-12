@@ -14,7 +14,7 @@
         var Clean = window.Clean;
         Clean.init(tip);
 
-        document.domain = '{$SIO_BASE_DOMAIN}';
+        document.domain = '{$app->request->getServerName()}';
 
         $('.hoauthWidget a').click(function() {
             var signinWin;
