@@ -89,7 +89,7 @@
             $pBox.hide();
         });
 
-        var api = '/api/rest';
+        var api = '/api/rest.html';
         $.ajaxSetup({
             url: api,
             type: "get",

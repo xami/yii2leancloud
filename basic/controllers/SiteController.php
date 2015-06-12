@@ -16,7 +16,7 @@ class SiteController extends Controller
         return [
             'access' => [
                 'class' => AccessControl::className(),
-                'only' => ['logout','agreement','register','reset','creset','cverify'],
+                'only' => ['logout'],
                 'rules' => [
                     [
                         'actions' => ['logout'],
@@ -126,26 +126,25 @@ class SiteController extends Controller
     }
 
     public function actionRegister(){
-        pd(3);
-        return $this->render('/mobile/register', $this->data);
+        return $this->render('/mobile/register.tpl', $this->data);
     }
 
     public function actionReset(){
-        return $this->render('/mobile/reset', $this->data);
+        return $this->render('/mobile/reset.tpl', $this->data);
     }
 
     public function actionAgreement(){
 
-        return $this->render('/mobile/agreement', $this->data);
+        return $this->render('/mobile/agreement.tpl', $this->data);
     }
 
     public function actionCReset(){
         $this->layout = '//layouts/api';
-        return $this->render('/mobile/creset', $this->data);
+        return $this->render('/mobile/creset.tpl', $this->data);
     }
 
     public function actionCVerify(){
         $this->layout = '//layouts/api';
-        return $this->render('/mobile/cverify', $this->data);
+        return $this->render('/mobile/cverify.tpl', $this->data);
     }
 }

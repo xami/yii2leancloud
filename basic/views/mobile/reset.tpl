@@ -82,7 +82,7 @@
 
     </div>
     <div id="mask" class="mask hide"></div>
-    <div id="maskLoad" class="maskLoad"><span><img src="/images/loading_circle.gif" /></span></div>
+    <div id="maskLoad" class="maskLoad"><span><img src="/css/images/loading_circle.gif" /></span></div>
 </div>
 
 {include file="mobile/box.tpl"}
