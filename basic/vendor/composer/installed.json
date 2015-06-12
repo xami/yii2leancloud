@@ -1,54 +1,5 @@
 [
     {
-        "name": "yiisoft/yii2-composer",
-        "version": "dev-master",
-        "version_normalized": "9999999-dev",
-        "source": {
-            "type": "git",
-            "url": "https://github.com/yiisoft/yii2-composer.git",
-            "reference": "c7f59a6db76ae12aef4ddd244b0d02ab76b8a0b8"
-        },
-        "dist": {
-            "type": "zip",
-            "url": "https://api.github.com/repos/yiisoft/yii2-composer/zipball/c7f59a6db76ae12aef4ddd244b0d02ab76b8a0b8",
-            "reference": "c7f59a6db76ae12aef4ddd244b0d02ab76b8a0b8",
-            "shasum": ""
-        },
-        "require": {
-            "composer-plugin-api": "1.0.0"
-        },
-        "time": "2015-04-29 09:00:02",
-        "type": "composer-plugin",
-        "extra": {
-            "class": "yii\\composer\\Plugin",
-            "branch-alias": {
-                "dev-master": "2.0.x-dev"
-            }
-        },
-        "installation-source": "dist",
-        "autoload": {
-            "psr-4": {
-                "yii\\composer\\": ""
-            }
-        },
-        "notification-url": "https://packagist.org/downloads/",
-        "license": [
-            "BSD-3-Clause"
-        ],
-        "authors": [
-            {
-                "name": "Qiang Xue",
-                "email": "qiang.xue@gmail.com"
-            }
-        ],
-        "description": "The composer plugin for Yii extension installer",
-        "keywords": [
-            "composer",
-            "extension installer",
-            "yii2"
-        ]
-    },
-    {
         "name": "ezyang/htmlpurifier",
         "version": "v4.6.0",
         "version_normalized": "4.6.0.0",
@@ -460,12 +411,12 @@
         "source": {
             "type": "git",
             "url": "https://github.com/fzaninotto/Faker.git",
-            "reference": "a3aad09dc8b0f4767e113fc2a7e8fd2ccb11aa65"
+            "reference": "f91f6a654c92ed2075d19b6142214d69cde06bab"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/fzaninotto/Faker/zipball/a3aad09dc8b0f4767e113fc2a7e8fd2ccb11aa65",
-            "reference": "a3aad09dc8b0f4767e113fc2a7e8fd2ccb11aa65",
+            "url": "https://api.github.com/repos/fzaninotto/Faker/zipball/f91f6a654c92ed2075d19b6142214d69cde06bab",
+            "reference": "f91f6a654c92ed2075d19b6142214d69cde06bab",
             "shasum": ""
         },
         "require": {
@@ -478,14 +429,14 @@
         "suggest": {
             "ext-intl": "*"
         },
-        "time": "2015-06-04 12:46:03",
+        "time": "2015-06-11 20:05:28",
         "type": "library",
         "extra": {
             "branch-alias": {
                 "dev-master": "1.6.x-dev"
             }
         },
-        "installation-source": "dist",
+        "installation-source": "source",
         "autoload": {
             "psr-4": {
                 "Faker\\": "src/Faker/"
@@ -812,135 +763,6 @@
         ]
     },
     {
-        "name": "simple-html-dom/simple-html-dom",
-        "version": "dev-master",
-        "version_normalized": "9999999-dev",
-        "source": {
-            "type": "git",
-            "url": "git@github.com:Youpie/simple-html-dom.git",
-            "reference": "03ee4b240fd89bd3b2181f4a8b60e795954b4a3c"
-        },
-        "dist": {
-            "type": "zip",
-            "url": "https://api.github.com/repos/Youpie/simple-html-dom/zipball/03ee4b240fd89bd3b2181f4a8b60e795954b4a3c",
-            "reference": "03ee4b240fd89bd3b2181f4a8b60e795954b4a3c",
-            "shasum": ""
-        },
-        "time": "2014-01-23 21:41:31",
-        "type": "library",
-        "installation-source": "source",
-        "autoload": {
-            "classmap": [
-                "simple-html-dom.php"
-            ]
-        },
-        "notification-url": "https://packagist.org/downloads/",
-        "license": [
-            "MIT"
-        ],
-        "authors": [
-            {
-                "name": "S.C. Chen",
-                "email": "me578022@gmail.com",
-                "homepage": "http://simplehtmldom.sourceforge.net/",
-                "role": "Lead Developer"
-            }
-        ],
-        "description": "A copy of the PHP Simple HTML DOM Parser project."
-    },
-    {
-        "name": "shuber/curl",
-        "version": "dev-master",
-        "version_normalized": "9999999-dev",
-        "source": {
-            "type": "git",
-            "url": "https://github.com/hamstar/curl.git",
-            "reference": "6624992df201f9fd7262080117385dd09b0ecd2b"
-        },
-        "dist": {
-            "type": "zip",
-            "url": "https://api.github.com/repos/hamstar/curl/zipball/6624992df201f9fd7262080117385dd09b0ecd2b",
-            "reference": "6624992df201f9fd7262080117385dd09b0ecd2b",
-            "shasum": ""
-        },
-        "time": "2013-11-23 01:44:31",
-        "type": "library",
-        "installation-source": "source",
-        "autoload": {
-            "files": [
-                "curl.php"
-            ]
-        },
-        "notification-url": "https://packagist.org/downloads/",
-        "license": [
-            "MIT"
-        ],
-        "description": "PHP Wrapper for Curl",
-        "keywords": [
-            "bot",
-            "curl",
-            "scraper",
-            "spider"
-        ]
-    },
-    {
-        "name": "smarty/smarty",
-        "version": "dev-master",
-        "version_normalized": "9999999-dev",
-        "source": {
-            "type": "git",
-            "url": "https://github.com/smarty-php/smarty.git",
-            "reference": "f1e1f56ffe85b4a8f7f238bd33024ff1e14905d7"
-        },
-        "dist": {
-            "type": "zip",
-            "url": "https://api.github.com/repos/smarty-php/smarty/zipball/f1e1f56ffe85b4a8f7f238bd33024ff1e14905d7",
-            "reference": "f1e1f56ffe85b4a8f7f238bd33024ff1e14905d7",
-            "shasum": ""
-        },
-        "require": {
-            "php": ">=5.2"
-        },
-        "time": "2015-06-08 21:54:46",
-        "type": "library",
-        "extra": {
-            "branch-alias": {
-                "dev-master": "3.1.x-dev"
-            }
-        },
-        "installation-source": "source",
-        "autoload": {
-            "classmap": [
-                "libs/Smarty.class.php",
-                "libs/SmartyBC.class.php",
-                "libs/sysplugins/"
-            ]
-        },
-        "notification-url": "https://packagist.org/downloads/",
-        "license": [
-            "LGPL-3.0"
-        ],
-        "authors": [
-            {
-                "name": "Monte Ohrt",
-                "email": "monte@ohrt.com"
-            },
-            {
-                "name": "Uwe Tews",
-                "email": "uwe.tews@googlemail.com"
-            },
-            {
-                "name": "Rodney Rehm",
-                "email": "rodney.rehm@medialize.de"
-            }
-        ],
-        "description": "Smarty - the compiling PHP template engine",
-        "homepage": "http://www.smarty.net",
-        "keywords": [
-            "templating"
-        ]
-    },
-    {
         "name": "yiisoft/yii2-smarty",
         "version": "dev-master",
         "version_normalized": "9999999-dev",
@@ -994,65 +816,6 @@
         ]
     },
     {
-        "name": "twig/twig",
-        "version": "1.x-dev",
-        "version_normalized": "1.9999999.9999999.9999999-dev",
-        "source": {
-            "type": "git",
-            "url": "https://github.com/twigphp/Twig.git",
-            "reference": "e22fb8728b395b306a06785a3ae9b12f3fbc0294"
-        },
-        "dist": {
-            "type": "zip",
-            "url": "https://api.github.com/repos/twigphp/Twig/zipball/e22fb8728b395b306a06785a3ae9b12f3fbc0294",
-            "reference": "e22fb8728b395b306a06785a3ae9b12f3fbc0294",
-            "shasum": ""
-        },
-        "require": {
-            "php": ">=5.2.7"
-        },
-        "time": "2015-06-06 23:35:59",
-        "type": "library",
-        "extra": {
-            "branch-alias": {
-                "dev-master": "1.18-dev"
-            }
-        },
-        "installation-source": "source",
-        "autoload": {
-            "psr-0": {
-                "Twig_": "lib/"
-            }
-        },
-        "notification-url": "https://packagist.org/downloads/",
-        "license": [
-            "BSD-3-Clause"
-        ],
-        "authors": [
-            {
-                "name": "Fabien Potencier",
-                "email": "fabien@symfony.com",
-                "homepage": "http://fabien.potencier.org",
-                "role": "Lead Developer"
-            },
-            {
-                "name": "Armin Ronacher",
-                "email": "armin.ronacher@active-4.com",
-                "role": "Project Founder"
-            },
-            {
-                "name": "Twig Team",
-                "homepage": "http://twig.sensiolabs.org/contributors",
-                "role": "Contributors"
-            }
-        ],
-        "description": "Twig, the flexible, fast, and secure template language for PHP",
-        "homepage": "http://twig.sensiolabs.org",
-        "keywords": [
-            "templating"
-        ]
-    },
-    {
         "name": "yiisoft/yii2-twig",
         "version": "dev-master",
         "version_normalized": "9999999-dev",
@@ -1103,58 +866,6 @@
             "renderer",
             "twig",
             "yii2"
-        ]
-    },
-    {
-        "name": "nategood/httpful",
-        "version": "dev-master",
-        "version_normalized": "9999999-dev",
-        "source": {
-            "type": "git",
-            "url": "https://github.com/nategood/httpful.git",
-            "reference": "56c45758cf21100c432ae478c61307a1e412fed7"
-        },
-        "dist": {
-            "type": "zip",
-            "url": "https://api.github.com/repos/nategood/httpful/zipball/56c45758cf21100c432ae478c61307a1e412fed7",
-            "reference": "56c45758cf21100c432ae478c61307a1e412fed7",
-            "shasum": ""
-        },
-        "require": {
-            "ext-curl": "*",
-            "php": ">=5.3"
-        },
-        "require-dev": {
-            "phpunit/phpunit": "*"
-        },
-        "time": "2015-05-19 18:49:40",
-        "type": "library",
-        "installation-source": "source",
-        "autoload": {
-            "psr-0": {
-                "Httpful": "src/"
-            }
-        },
-        "notification-url": "https://packagist.org/downloads/",
-        "license": [
-            "MIT"
-        ],
-        "authors": [
-            {
-                "name": "Nate Good",
-                "email": "me@nategood.com",
-                "homepage": "http://nategood.com"
-            }
-        ],
-        "description": "A Readable, Chainable, REST friendly, PHP HTTP Client",
-        "homepage": "http://github.com/nategood/httpful",
-        "keywords": [
-            "api",
-            "curl",
-            "http",
-            "requests",
-            "rest",
-            "restful"
         ]
     },
     {
@@ -1426,5 +1137,259 @@
             "bower-asset-ignore": []
         },
         "installation-source": "dist"
+    },
+    {
+        "name": "nategood/httpful",
+        "version": "dev-master",
+        "version_normalized": "9999999-dev",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/nategood/httpful.git",
+            "reference": "56c45758cf21100c432ae478c61307a1e412fed7"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/nategood/httpful/zipball/56c45758cf21100c432ae478c61307a1e412fed7",
+            "reference": "56c45758cf21100c432ae478c61307a1e412fed7",
+            "shasum": ""
+        },
+        "require": {
+            "ext-curl": "*",
+            "php": ">=5.3"
+        },
+        "require-dev": {
+            "phpunit/phpunit": "*"
+        },
+        "time": "2015-05-19 18:49:40",
+        "type": "library",
+        "installation-source": "source",
+        "autoload": {
+            "psr-0": {
+                "Httpful": "src/"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Nate Good",
+                "email": "me@nategood.com",
+                "homepage": "http://nategood.com"
+            }
+        ],
+        "description": "A Readable, Chainable, REST friendly, PHP HTTP Client",
+        "homepage": "http://github.com/nategood/httpful",
+        "keywords": [
+            "api",
+            "curl",
+            "http",
+            "requests",
+            "rest",
+            "restful"
+        ]
+    },
+    {
+        "name": "simple-html-dom/simple-html-dom",
+        "version": "dev-master",
+        "version_normalized": "9999999-dev",
+        "source": {
+            "type": "git",
+            "url": "git@github.com:Youpie/simple-html-dom.git",
+            "reference": "03ee4b240fd89bd3b2181f4a8b60e795954b4a3c"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/Youpie/simple-html-dom/zipball/03ee4b240fd89bd3b2181f4a8b60e795954b4a3c",
+            "reference": "03ee4b240fd89bd3b2181f4a8b60e795954b4a3c",
+            "shasum": ""
+        },
+        "time": "2014-01-23 21:41:31",
+        "type": "library",
+        "installation-source": "source",
+        "autoload": {
+            "classmap": [
+                "simple-html-dom.php"
+            ]
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "S.C. Chen",
+                "email": "me578022@gmail.com",
+                "homepage": "http://simplehtmldom.sourceforge.net/",
+                "role": "Lead Developer"
+            }
+        ],
+        "description": "A copy of the PHP Simple HTML DOM Parser project."
+    },
+    {
+        "name": "smarty/smarty",
+        "version": "dev-master",
+        "version_normalized": "9999999-dev",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/smarty-php/smarty.git",
+            "reference": "f1e1f56ffe85b4a8f7f238bd33024ff1e14905d7"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/smarty-php/smarty/zipball/f1e1f56ffe85b4a8f7f238bd33024ff1e14905d7",
+            "reference": "f1e1f56ffe85b4a8f7f238bd33024ff1e14905d7",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.2"
+        },
+        "time": "2015-06-08 21:54:46",
+        "type": "library",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "3.1.x-dev"
+            }
+        },
+        "installation-source": "source",
+        "autoload": {
+            "classmap": [
+                "libs/Smarty.class.php",
+                "libs/SmartyBC.class.php",
+                "libs/sysplugins/"
+            ]
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "LGPL-3.0"
+        ],
+        "authors": [
+            {
+                "name": "Monte Ohrt",
+                "email": "monte@ohrt.com"
+            },
+            {
+                "name": "Uwe Tews",
+                "email": "uwe.tews@googlemail.com"
+            },
+            {
+                "name": "Rodney Rehm",
+                "email": "rodney.rehm@medialize.de"
+            }
+        ],
+        "description": "Smarty - the compiling PHP template engine",
+        "homepage": "http://www.smarty.net",
+        "keywords": [
+            "templating"
+        ]
+    },
+    {
+        "name": "twig/twig",
+        "version": "1.x-dev",
+        "version_normalized": "1.9999999.9999999.9999999-dev",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/twigphp/Twig.git",
+            "reference": "e22fb8728b395b306a06785a3ae9b12f3fbc0294"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/twigphp/Twig/zipball/e22fb8728b395b306a06785a3ae9b12f3fbc0294",
+            "reference": "e22fb8728b395b306a06785a3ae9b12f3fbc0294",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.2.7"
+        },
+        "time": "2015-06-06 23:35:59",
+        "type": "library",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "1.18-dev"
+            }
+        },
+        "installation-source": "source",
+        "autoload": {
+            "psr-0": {
+                "Twig_": "lib/"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "BSD-3-Clause"
+        ],
+        "authors": [
+            {
+                "name": "Fabien Potencier",
+                "email": "fabien@symfony.com",
+                "homepage": "http://fabien.potencier.org",
+                "role": "Lead Developer"
+            },
+            {
+                "name": "Armin Ronacher",
+                "email": "armin.ronacher@active-4.com",
+                "role": "Project Founder"
+            },
+            {
+                "name": "Twig Team",
+                "homepage": "http://twig.sensiolabs.org/contributors",
+                "role": "Contributors"
+            }
+        ],
+        "description": "Twig, the flexible, fast, and secure template language for PHP",
+        "homepage": "http://twig.sensiolabs.org",
+        "keywords": [
+            "templating"
+        ]
+    },
+    {
+        "name": "yiisoft/yii2-composer",
+        "version": "dev-master",
+        "version_normalized": "9999999-dev",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/yiisoft/yii2-composer.git",
+            "reference": "6b2a2b3bb83d4b3dd791f76e64c48973ce01bac6"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/yiisoft/yii2-composer/zipball/6b2a2b3bb83d4b3dd791f76e64c48973ce01bac6",
+            "reference": "6b2a2b3bb83d4b3dd791f76e64c48973ce01bac6",
+            "shasum": ""
+        },
+        "require": {
+            "composer-plugin-api": "^1.0"
+        },
+        "time": "2015-06-11 19:55:58",
+        "type": "composer-plugin",
+        "extra": {
+            "class": "yii\\composer\\Plugin",
+            "branch-alias": {
+                "dev-master": "2.0.x-dev"
+            }
+        },
+        "installation-source": "source",
+        "autoload": {
+            "psr-4": {
+                "yii\\composer\\": ""
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "BSD-3-Clause"
+        ],
+        "authors": [
+            {
+                "name": "Qiang Xue",
+                "email": "qiang.xue@gmail.com"
+            }
+        ],
+        "description": "The composer plugin for Yii extension installer",
+        "keywords": [
+            "composer",
+            "extension installer",
+            "yii2"
+        ]
     }
 ]

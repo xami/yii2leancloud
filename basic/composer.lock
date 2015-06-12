@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "b2e2618fdf5a7a36a4fcda3d242b2a81",
+    "hash": "ff9bc5b006f10006c396b2e6aad39be9",
     "packages": [
         {
             "name": "bower-asset/bootstrap",
@@ -452,39 +452,6 @@
                 "restful"
             ],
             "time": "2015-05-19 18:49:40"
-        },
-        {
-            "name": "shuber/curl",
-            "version": "dev-master",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/hamstar/curl.git",
-                "reference": "6624992df201f9fd7262080117385dd09b0ecd2b"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/hamstar/curl/zipball/6624992df201f9fd7262080117385dd09b0ecd2b",
-                "reference": "6624992df201f9fd7262080117385dd09b0ecd2b",
-                "shasum": ""
-            },
-            "type": "library",
-            "autoload": {
-                "files": [
-                    "curl.php"
-                ]
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "description": "PHP Wrapper for Curl",
-            "keywords": [
-                "bot",
-                "curl",
-                "scraper",
-                "spider"
-            ],
-            "time": "2013-11-23 01:44:31"
         },
         {
             "name": "simple-html-dom/simple-html-dom",
@@ -1383,7 +1350,6 @@
     "minimum-stability": "dev",
     "stability-flags": {
         "simple-html-dom/simple-html-dom": 20,
-        "shuber/curl": 20,
         "bower-asset/jquery": 0,
         "bower-asset/bootstrap": 0,
         "bower-asset/jquery-ui": 0,

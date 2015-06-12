@@ -9,7 +9,14 @@ Yii 2 整合 leanCloud登陆、注册、第三方登陆
 问题讨论，反馈QQ群：464984083
 
 演示地址：
+-------------------
 http://yii2leancloud.odube.com
+
+
+安装步骤：
+1、删除 basic/composer.lock，执行composer install更新依赖
+
+
 
 
 

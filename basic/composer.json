@@ -27,7 +27,6 @@
     "yiisoft/yii2-smarty": "*",
     "yiisoft/yii2-twig": "*",
     "simple-html-dom/simple-html-dom": "dev-master",
-    "shuber/curl": "dev-master",
     "nategood/httpful": "*",
     "yiisoft/yii2-authclient": "*",
     "bower-asset/jquery": "@stable",
