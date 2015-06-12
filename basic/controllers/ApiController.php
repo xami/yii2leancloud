@@ -6,6 +6,7 @@ use Yii;
 use yii\filters\AccessControl;
 use yii\web\Controller;
 use yii\filters\VerbFilter;
+use app\models\LeanCloud;
 
 class ApiController extends \yii\web\Controller
 {
@@ -57,13 +58,13 @@ class ApiController extends \yii\web\Controller
                 //重新登陆
                 if(isset($r->sessionToken) && isset($r->objectId)){
                     // 绕过登陆机制
-                    $identity=new CleanIdentity($r);
-                    // 把用户username、objectId存model里面
+                    $identity=Yii::$app->user->identity;
                     $identity->authenticate($r);
-                    $duration=$data['rememberMe'] ? Yii::app()->user->rememberMeTime : Yii::app()->params['login_time'];
-                    Yii::app()->user->login($identity, $duration);
+                    // 把用户username、objectId存model里面
+                    $duration=$data['rememberMe'] ? Yii::$app->params['rememberMeTime'] : Yii::$app->params['login_time'];
+                    Yii::$app->user->login($identity, $duration);
                     foreach ($r as $attrName=>$attrValue) {
-                        Yii::app()->user->setState($attrName,$attrValue);
+                        Yii::$app->user->setState($attrName,$attrValue);
                     }
                 }else{
 

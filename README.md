@@ -36,6 +36,10 @@ http://yii2leancloud.odube.com
  ) ENGINE=InnoDB AUTO_INCREMENT=151240 DEFAULT CHARSET=utf8; 
 ``
 
+3、LeanCloud后台“设置》应用选项》”勾选
+ 启用注册用户邮箱验证
+ 验证注册用户手机号码
+ 允许未验证手机号码用户通过短信重置密码
 
 
 
