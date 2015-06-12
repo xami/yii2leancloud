@@ -76,11 +76,11 @@
     <div class="footer" style="text-align:right;">
         <input class="foo_btn yel_linear" id="verifyCode" value="{__('Register')}" type="button">
         {if empty($return_url)}
-            <a href="/mobile/login.html" class="turn_link" style="float:none; margin-right:20px;">{__('Login')}</a>
-            <a href="/mobile/reset.html" class="turn_link" style="float:none;">{__('Forgot Password')}</a>
+            <a href="/site/login.html" class="turn_link" style="float:none; margin-right:20px;">{__('Login')}</a>
+            <a href="/site/reset.html" class="turn_link" style="float:none;">{__('Forgot Password')}</a>
         {else}
-            <a href="/mobile/login?return_url={$return_url|urlencode}" class="turn_link" style="float:none; margin-right:20px;">{__('Login')}</a>
-            <a href="/mobile/reset?return_url={$return_url|urlencode}" class="turn_link" style="float:none;">{__('Forgot Password')}</a>
+            <a href="/site/login?return_url={$return_url|urlencode}" class="turn_link" style="float:none; margin-right:20px;">{__('Login')}</a>
+            <a href="/site/reset?return_url={$return_url|urlencode}" class="turn_link" style="float:none;">{__('Forgot Password')}</a>
         {/if}
     </div>
     <div id="mask" class="mask hide"></div>

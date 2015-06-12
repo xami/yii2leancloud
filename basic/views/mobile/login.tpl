@@ -34,17 +34,17 @@
         <input type="hidden" id="back_act" name="back_act" value="http://m.hikemobile.com/user.php?act=reg"/>
         <p class="con_p_notes">
             Sioeye Inc.
-            <a href="/mobile/agreement.html" target="_blank">{__('Agreement')}</a>
+            <a href="/site/agreement.html" target="_blank">{__('Agreement')}</a>
         </p>
     </div>
     <div class="footer" style="text-align:right;">
         <input id="box-login" class="foo_btn yel_linear" value="{__('Login')}" type="button">
         {if empty($return_url)}
-            <a href="/mobile/register.html" class="turn_link" style="float:none; margin-right:20px;">{__('Register')}</a>
-            <a href="/mobile/reset.html" class="turn_link" style="float:none;">{__('Forgot Password')}</a>
+            <a href="/site/register.html" class="turn_link" style="float:none; margin-right:20px;">{__('Register')}</a>
+            <a href="/site/reset.html" class="turn_link" style="float:none;">{__('Forgot Password')}</a>
         {else}
-            <a href="/mobile/register.html?return_url={$return_url|urlencode}" class="turn_link" style="float:none; margin-right:20px;">{__('Register')}</a>
-            <a href="/mobile/reset.html?return_url={$return_url|urlencode}" class="turn_link" style="float:none;">{__('Forgot Password')}</a>
+            <a href="/site/register.html?return_url={$return_url|urlencode}" class="turn_link" style="float:none; margin-right:20px;">{__('Register')}</a>
+            <a href="/site/reset.html?return_url={$return_url|urlencode}" class="turn_link" style="float:none;">{__('Forgot Password')}</a>
         {/if}
     </div>
     <div id="mask" class="mask hide"></div>

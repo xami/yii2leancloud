@@ -92,6 +92,7 @@ class SiteController extends Controller
 
     public function actionLogout()
     {
+        $this->layout = 'main';
         Yii::$app->user->logout();
 
         return $this->goHome();
@@ -99,6 +100,7 @@ class SiteController extends Controller
 
     public function actionContact()
     {
+        $this->layout = 'main';
         $model = new ContactForm();
         if ($model->load(Yii::$app->request->post()) && $model->contact(Yii::$app->params['adminEmail'])) {
             Yii::$app->session->setFlash('contactFormSubmitted');
@@ -112,6 +114,7 @@ class SiteController extends Controller
 
     public function actionAbout()
     {
+        $this->layout = 'main';
         return $this->render('about');
     }
 
@@ -123,26 +126,26 @@ class SiteController extends Controller
     }
 
     public function actionRegister(){
-
-        $this->render('/mobile/register');
+        pd(3);
+        return $this->render('/mobile/register', $this->data);
     }
 
     public function actionReset(){
-        $this->render('/mobile/reset');
+        return $this->render('/mobile/reset', $this->data);
     }
 
     public function actionAgreement(){
 
-        $this->render('/mobile/agreement');
+        return $this->render('/mobile/agreement', $this->data);
     }
 
     public function actionCReset(){
         $this->layout = '//layouts/api';
-        $this->render('/mobile/creset');
+        return $this->render('/mobile/creset', $this->data);
     }
 
     public function actionCVerify(){
         $this->layout = '//layouts/api';
-        $this->render('/mobile/cverify');
+        return $this->render('/mobile/cverify', $this->data);
     }
 }

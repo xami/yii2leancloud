@@ -73,11 +73,11 @@
     <div class="footer" style="text-align:right;">
         <input class="foo_btn yel_linear" value="{__('Retrieve password')}" id="reset" type="button">
         {if empty($return_url)}
-            <a href="/mobile/login.html" class="turn_link" style="float:none; margin-right:20px;">{__('Login')}</a>
-            <a href="/mobile/register.html" class="turn_link" style="float:none;">{__('Register')}</a>
+            <a href="/site/login.html" class="turn_link" style="float:none; margin-right:20px;">{__('Login')}</a>
+            <a href="/site/register.html" class="turn_link" style="float:none;">{__('Register')}</a>
         {else}
-            <a href="/mobile/login?return_url={$return_url|urlencode}" class="turn_link" style="float:none; margin-right:20px;">{__('Login')}</a>
-            <a href="/mobile/register.html?return_url={$return_url|urlencode}" class="turn_link" style="float:none;">{__('Register')}</a>
+            <a href="/site/login?return_url={$return_url|urlencode}" class="turn_link" style="float:none; margin-right:20px;">{__('Login')}</a>
+            <a href="/site/register.html?return_url={$return_url|urlencode}" class="turn_link" style="float:none;">{__('Register')}</a>
         {/if}
 
     </div>
