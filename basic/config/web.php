@@ -45,8 +45,8 @@ $config = [
                 ],
                 'facebook' => [
                     'class' => 'yii\authclient\clients\Facebook',
-                    'clientId' => '883252061747010',
-                    'clientSecret' => '0990e81896f943afe5f754bd800a99dc',
+                    'clientId' => '432998553536558',
+                    'clientSecret' => '88cdfea142efcb079a70e21b36fd5855',
                 ],
                 'qq' => [
                     'class'=>'common\components\QqOAuth',
