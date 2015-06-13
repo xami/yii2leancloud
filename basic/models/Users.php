@@ -35,7 +35,7 @@ class Users extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['email', 'mobilePhoneNumber'], 'required'],
+//            [['email', 'mobilePhoneNumber'], 'required'],
             [['superuser', 'status'], 'integer'],
             [['create_at', 'lastvisit_at'], 'safe'],
             [['username'], 'string', 'max' => 20],

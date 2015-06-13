@@ -10,6 +10,11 @@ class User extends \yii\base\Model implements \yii\web\IdentityInterface
     public $username;
     public $password;
     public $email;
+    public $activkey;
+    public $superuser;
+    public $status;
+    public $create_at;
+    public $lastvisit_at;
     public $mobilePhoneNumber;
     public $sessionToken;
 
@@ -17,9 +22,12 @@ class User extends \yii\base\Model implements \yii\web\IdentityInterface
      * @inheritdoc
      */
     public static function findIdentity($id)
-    {
+    {pr('findIdentity');
         $user = Users::findOne($id);
-        return empty($user) ? $user : null;
+
+        $model = new self();
+        $model->setAttributes($user->attributes, false);
+        return empty($model) ? $model : null;
     }
 
     /**
@@ -29,10 +37,9 @@ class User extends \yii\base\Model implements \yii\web\IdentityInterface
     {
         $user = Users::findOne(['sessionToken'=>$token]);
 
-        if(!empty($user)){
-            return $user;
-        }
-        return null;
+        $model = new self();
+        $model->setAttributes($user->attributes, false);
+        return empty($model) ? $model : null;
     }
 
     /**
@@ -42,7 +49,7 @@ class User extends \yii\base\Model implements \yii\web\IdentityInterface
      * @return static|null
      */
     public static function findByUsername($username)
-    {
+    {pr('findByUsername');
         $user = Users::findOne(['username'=>$username]);
 
         //只信任直接调取接口的数据
@@ -52,20 +59,20 @@ class User extends \yii\base\Model implements \yii\web\IdentityInterface
             $user_cloud = $get_cloud->results[0];
         }
 
+        $model = new self();
+
+
         //先本地查询，再接口查询
         if(!empty($user)){
             if(!empty($user_cloud)){
                 $user->email = isset($user_cloud->email) ? $user_cloud->email : '';
                 $user->mobilePhoneNumber = isset($user_cloud->mobilePhoneNumber) ? $user_cloud->mobilePhoneNumber : '';
-//                $user->sessionToken = $user_cloud->sessionToken;
                 $user->lastvisit_at = date("Y-m-d H:i:s", strtotime($user_cloud->updatedAt));
+
                 if($user->save()){
-                    $this->id = $user->id;
-                    $this->email = $user_cloud->email;
-                    $this->mobilePhoneNumber = $user_cloud->mobilePhoneNumber;
-//                    $this->sessionToken = $user_cloud->sessionToken;
+                    $model->setAttributes($user->attributes, false);
                 }
-                return new ($this);
+                return $model;
             }
         }else{
             if(!empty($user_cloud)){
@@ -77,15 +84,11 @@ class User extends \yii\base\Model implements \yii\web\IdentityInterface
                 $user->status = 1;
                 $user->create_at = date("Y-m-d H:i:s", strtotime($user_cloud->createdAt));
                 $user->lastvisit_at = date("Y-m-d H:i:s", strtotime($user_cloud->updatedAt));
-//                $user->sessionToken = $user_cloud->sessionToken;
 
                 if($user->save()){
-                    $this->id = $user->id;
-                    $this->email = $user_cloud->email;
-                    $this->mobilePhoneNumber = $user_cloud->mobilePhoneNumber;
-//                    $this->sessionToken = $user_cloud->sessionToken;
+                    $model->setAttributes($user->attributes, false);
                 }
-                return $this;
+                return $model;
             }
         }
 
@@ -123,11 +126,13 @@ class User extends \yii\base\Model implements \yii\web\IdentityInterface
      * @return boolean if password provided is valid for current user
      */
     public function validatePassword($password)
-    {
-        $r = Yii::$app->LeanCloud->get('login', ['username'=>$this->username, 'password'=>$this->password]);
+    {pr('validatePassword');
+        $r = Yii::$app->LeanCloud->get('login', ['username'=>$this->username, 'password'=>$password]);
         if(isset($r->code)){
             return $r;
         }else{
+            Users::findOne(['username'])
+            $this->sessionToken = $r->sessionToken;
             return true;
         }
     }

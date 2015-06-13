@@ -46,9 +46,8 @@ class LoginForm extends Model
             $user = $this->getUser();
 
             if (!empty($user)) {
-                pd($user);
                 $result = $user->validatePassword($this->password);
-                if($result !== true){
+                if(isset($result->code)){
                     $this->addError($attribute, $result->error);
                 }
             }else{
@@ -64,6 +63,7 @@ class LoginForm extends Model
     public function login()
     {
         if ($this->validate()) {
+            pd($this->getUser()->findIdentity(151240));
             return Yii::$app->user->login($this->getUser(), $this->rememberMe ? 3600*24*30 : 0);
         }
         return false;
@@ -90,6 +90,6 @@ class LoginForm extends Model
         $this->rememberMe = $data->rememberMe;
         $this->sessionToken = $data->sessionToken;
 
-        return $this->getUser();
+        return $this;
     }
 }

@@ -53,7 +53,6 @@ class ApiController extends \yii\web\Controller
             $r = $c->{$type}($class, $data, $where, $method);
         }
 
-
         //处理登陆,绕过有登陆则直接取登陆信息
         if($type=='get' && $class=='login'){
             if(!isset($r->code)){
@@ -63,11 +62,12 @@ class ApiController extends \yii\web\Controller
                     $r->password = $data['password'];
                     // 实现本地登录
                     $model=new LoginForm();
-                    if ($model->load($r,'users') && $model->login()) {
-
+                    if ($model->load($r,'users')->login()) {
+                        pr(Yii::$app->user->id);
+                    }else{
+                        var_dump($model->getErrors());die;
+                        pd(2);
                     }
-                }else{
-
                 }
             }
         }
