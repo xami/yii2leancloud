@@ -62,8 +62,8 @@ class ApiController extends \yii\web\Controller
                     $r->password = $data['password'];
                     // 实现本地登录
                     $model=new LoginForm();
-                    if ($model->load($r,'users')->login()) {
-                        pd(Yii::$app->user->id);
+                    if ($model->load($r,'users')->login($r->sessionToken)) {
+                        pd(1);
                     }else{
                         var_dump($model->getErrors());die;
                         pd(2);
@@ -75,8 +75,9 @@ class ApiController extends \yii\web\Controller
         echo json_encode($r);
     }
 
-
-
+    public function actionUser(){
+        echo Yii::$app->user->id;
+    }
 
 
 }
