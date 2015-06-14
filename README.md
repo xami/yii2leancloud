@@ -43,6 +43,10 @@ http://yii2leancloud.odube.com
  允许未验证手机号码用户通过短信重置密码
 ``
 
+4、初始化数据库
+cd yii2leancloud/basic
+./yii migrate
+
 
 
 

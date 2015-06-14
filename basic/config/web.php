@@ -18,6 +18,9 @@ $config = [
                 "<controller:\w+>/<action:\w+>"=>"<controller>/<action>"
             ],
         ],
+        'authManager' => [
+            'class' => 'yii\rbac\DbManager',
+        ],
         'request' => [
             // !!! insert a secret key in the following (if it is empty) - this is required by cookie validation
             'cookieValidationKey' => 'b96HJExAdPcKvPLkMZGJEJbN3OoxFLmN',
