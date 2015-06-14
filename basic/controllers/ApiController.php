@@ -63,10 +63,9 @@ class ApiController extends \yii\web\Controller
                     // 实现本地登录
                     $model=new LoginForm();
                     if ($model->load($r,'users')->login($r->sessionToken)) {
-                        pd(1);
+
                     }else{
-                        var_dump($model->getErrors());die;
-                        pd(2);
+
                     }
                 }
             }
