@@ -22,7 +22,8 @@ class User extends \yii\base\Model implements \yii\web\IdentityInterface
      * @inheritdoc
      */
     public static function findIdentity($id)
-    {pr('findIdentity');
+    {
+//        pr('findIdentity');
         $user = Users::findOne($id);
 
         $model = new self();
@@ -49,7 +50,8 @@ class User extends \yii\base\Model implements \yii\web\IdentityInterface
      * @return static|null
      */
     public static function findByUsername($username)
-    {pr('findByUsername');
+    {
+//        pr('findByUsername');
         $user = Users::findOne(['username'=>$username]);
 
         //只信任直接调取接口的数据
@@ -116,6 +118,7 @@ class User extends \yii\base\Model implements \yii\web\IdentityInterface
      */
     public function validateAuthKey($authKey)
     {
+//        pr('validateAuthKey');
         return $this->sessionToken === $authKey;
     }
 
@@ -126,13 +129,12 @@ class User extends \yii\base\Model implements \yii\web\IdentityInterface
      * @return boolean if password provided is valid for current user
      */
     public function validatePassword($password)
-    {pr('validatePassword');
+    {
+//        pr('validatePassword');
         $r = Yii::$app->LeanCloud->get('login', ['username'=>$this->username, 'password'=>$password]);
         if(isset($r->code)){
             return $r;
         }else{
-            Users::findOne(['username'])
-            $this->sessionToken = $r->sessionToken;
             return true;
         }
     }

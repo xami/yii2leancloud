@@ -63,7 +63,7 @@ class ApiController extends \yii\web\Controller
                     // 实现本地登录
                     $model=new LoginForm();
                     if ($model->load($r,'users')->login()) {
-                        pr(Yii::$app->user->id);
+                        pd(Yii::$app->user->id);
                     }else{
                         var_dump($model->getErrors());die;
                         pd(2);
