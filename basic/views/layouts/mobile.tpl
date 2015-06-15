@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+    {use class="yii\helpers\Html"}{use class="app\assets\AppAsset"}{AppAsset::register($this)|void}{$this->beginPage()}<!DOCTYPE html>
 <html>
 <head>
     <meta charset="utf-8">
@@ -19,10 +19,14 @@
             }
         })();
     </script>
+    {$this->head()}
 </head>
 <body>
+{$this->beginBody()}
 
 {$content}
 
+{$this->endBody()}
 </body>
 </html>
+{$this->endPage()}

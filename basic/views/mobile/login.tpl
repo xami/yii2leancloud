@@ -47,8 +47,12 @@
             <a href="/site/reset.html?return_url={$return_url|urlencode}" class="turn_link" style="float:none;">{__('Forgot Password')}</a>
         {/if}
     </div>
+    <div style="clear: both;">&nbsp;</div>
+    {$sso}
     <div id="mask" class="mask hide"></div>
     <div id="maskLoad" class="maskLoad"><span><img src="/css/images/loading_circle.gif" /></span></div>
 </div>
+
+<script src="/js/authchoice.js"></script>
 
 {include file="mobile/box.tpl"}

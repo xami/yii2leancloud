@@ -1,5 +1,5 @@
 <?php
-namespace app\components;
+namespace app\models;
 
 use yii\authclient\OAuth2;
 use yii\base\Exception;

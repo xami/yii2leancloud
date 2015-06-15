@@ -8,6 +8,7 @@ use yii\web\Controller;
 use yii\filters\VerbFilter;
 use app\models\LoginForm;
 use app\models\ContactForm;
+use app\assets\AppAsset;
 
 class SiteController extends Controller
 {
@@ -37,6 +38,10 @@ class SiteController extends Controller
     public function actions()
     {
         return [
+            'auth' => [
+                'class' => 'yii\authclient\AuthAction',
+                'successCallback' => [$this, 'successCallback'],
+            ],
             'error' => [
                 'class' => 'yii\web\ErrorAction',
             ],
@@ -45,6 +50,13 @@ class SiteController extends Controller
                 'fixedVerifyCode' => YII_ENV_TEST ? 'testme' : null,
             ],
         ];
+    }
+
+    public function successCallback($client)
+    {
+        $attributes = $client->getUserAttributes();
+        \Yii::error(json_encode($attributes));
+        // user login or signup comes here
     }
 
 
@@ -121,6 +133,8 @@ class SiteController extends Controller
 
 
     public function actionLogin(){
+        $sso = \yii\authclient\widgets\AuthChoice::widget([ 'baseAuthUrl' => ['site/auth']]);
+        $this->data['sso'] = $sso;
 
         return $this->render('/mobile/login.tpl', $this->data);
     }
