@@ -92,8 +92,8 @@ $config = [
                 ],
                 'qq' => [
                     'class'=>'app\models\QqOAuth',
-                    'clientId'=>'1104698398',
-                    'clientSecret'=>'o1l4BFyC0XgPhoUD'
+                    'clientId'=>'101222737',
+                    'clientSecret'=>'02174f9b2f5ddcff31309fb85306f4ad'
                 ],
             ],
         ],
