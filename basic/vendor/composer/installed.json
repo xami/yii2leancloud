@@ -1041,56 +1041,6 @@
         ]
     },
     {
-        "name": "yiisoft/yii2-authclient",
-        "version": "dev-master",
-        "version_normalized": "9999999-dev",
-        "source": {
-            "type": "git",
-            "url": "https://github.com/yiisoft/yii2-authclient.git",
-            "reference": "c25b04a34ab1b9ae4f2f7a35aeee38033ad3654d"
-        },
-        "dist": {
-            "type": "zip",
-            "url": "https://api.github.com/repos/yiisoft/yii2-authclient/zipball/c25b04a34ab1b9ae4f2f7a35aeee38033ad3654d",
-            "reference": "c25b04a34ab1b9ae4f2f7a35aeee38033ad3654d",
-            "shasum": ""
-        },
-        "require": {
-            "ext-curl": "*",
-            "yiisoft/yii2": ">=2.0.4"
-        },
-        "time": "2015-05-31 10:44:46",
-        "type": "yii2-extension",
-        "extra": {
-            "branch-alias": {
-                "dev-master": "2.0.x-dev"
-            }
-        },
-        "installation-source": "source",
-        "autoload": {
-            "psr-4": {
-                "yii\\authclient\\": ""
-            }
-        },
-        "notification-url": "https://packagist.org/downloads/",
-        "license": [
-            "BSD-3-Clause"
-        ],
-        "authors": [
-            {
-                "name": "Paul Klimov",
-                "email": "klimov.paul@gmail.com"
-            }
-        ],
-        "description": "External authentication via OAuth and OpenID for the Yii framework",
-        "keywords": [
-            "OpenId",
-            "auth",
-            "oauth",
-            "yii2"
-        ]
-    },
-    {
         "name": "yiisoft/yii2-smarty",
         "version": "dev-master",
         "version_normalized": "9999999-dev",
@@ -1390,6 +1340,56 @@
         "homepage": "http://www.smarty.net",
         "keywords": [
             "templating"
+        ]
+    },
+    {
+        "name": "yiisoft/yii2-authclient",
+        "version": "dev-master",
+        "version_normalized": "9999999-dev",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/yiisoft/yii2-authclient.git",
+            "reference": "c25b04a34ab1b9ae4f2f7a35aeee38033ad3654d"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/yiisoft/yii2-authclient/zipball/c25b04a34ab1b9ae4f2f7a35aeee38033ad3654d",
+            "reference": "c25b04a34ab1b9ae4f2f7a35aeee38033ad3654d",
+            "shasum": ""
+        },
+        "require": {
+            "ext-curl": "*",
+            "yiisoft/yii2": ">=2.0.4"
+        },
+        "time": "2015-05-31 10:44:46",
+        "type": "yii2-extension",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "2.0.x-dev"
+            }
+        },
+        "installation-source": "source",
+        "autoload": {
+            "psr-4": {
+                "yii\\authclient\\": ""
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "BSD-3-Clause"
+        ],
+        "authors": [
+            {
+                "name": "Paul Klimov",
+                "email": "klimov.paul@gmail.com"
+            }
+        ],
+        "description": "External authentication via OAuth and OpenID for the Yii framework",
+        "keywords": [
+            "OpenId",
+            "auth",
+            "oauth",
+            "yii2"
         ]
     }
 ]
