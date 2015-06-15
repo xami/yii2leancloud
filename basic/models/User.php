@@ -27,7 +27,9 @@ class User extends \yii\base\Model implements \yii\web\IdentityInterface
         $user = Users::findOne($id);
 
         $model = new self();
-        $model->setAttributes($user->attributes, false);
+        if(!empty($user)){
+            $model->setAttributes($user->attributes, false);
+        }
         return !empty($model) ? $model : null;
     }
 
@@ -39,7 +41,9 @@ class User extends \yii\base\Model implements \yii\web\IdentityInterface
         $user = Users::findOne(['sessionToken'=>$token]);
 
         $model = new self();
-        $model->setAttributes($user->attributes, false);
+        if(!empty($user)){
+            $model->setAttributes($user->attributes, false);
+        }
         return !empty($model) ? $model : null;
     }
 
