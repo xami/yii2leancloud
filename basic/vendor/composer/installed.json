@@ -893,58 +893,6 @@
         "installation-source": "dist"
     },
     {
-        "name": "nategood/httpful",
-        "version": "dev-master",
-        "version_normalized": "9999999-dev",
-        "source": {
-            "type": "git",
-            "url": "https://github.com/nategood/httpful.git",
-            "reference": "56c45758cf21100c432ae478c61307a1e412fed7"
-        },
-        "dist": {
-            "type": "zip",
-            "url": "https://api.github.com/repos/nategood/httpful/zipball/56c45758cf21100c432ae478c61307a1e412fed7",
-            "reference": "56c45758cf21100c432ae478c61307a1e412fed7",
-            "shasum": ""
-        },
-        "require": {
-            "ext-curl": "*",
-            "php": ">=5.3"
-        },
-        "require-dev": {
-            "phpunit/phpunit": "*"
-        },
-        "time": "2015-05-19 18:49:40",
-        "type": "library",
-        "installation-source": "source",
-        "autoload": {
-            "psr-0": {
-                "Httpful": "src/"
-            }
-        },
-        "notification-url": "https://packagist.org/downloads/",
-        "license": [
-            "MIT"
-        ],
-        "authors": [
-            {
-                "name": "Nate Good",
-                "email": "me@nategood.com",
-                "homepage": "http://nategood.com"
-            }
-        ],
-        "description": "A Readable, Chainable, REST friendly, PHP HTTP Client",
-        "homepage": "http://github.com/nategood/httpful",
-        "keywords": [
-            "api",
-            "curl",
-            "http",
-            "requests",
-            "rest",
-            "restful"
-        ]
-    },
-    {
         "name": "simple-html-dom/simple-html-dom",
         "version": "dev-master",
         "version_normalized": "9999999-dev",
@@ -1038,59 +986,6 @@
         "homepage": "http://twig.sensiolabs.org",
         "keywords": [
             "templating"
-        ]
-    },
-    {
-        "name": "yiisoft/yii2-smarty",
-        "version": "dev-master",
-        "version_normalized": "9999999-dev",
-        "source": {
-            "type": "git",
-            "url": "https://github.com/yiisoft/yii2-smarty.git",
-            "reference": "8d46508a8c71a2d35939f6ec241bddfe48a45b44"
-        },
-        "dist": {
-            "type": "zip",
-            "url": "https://api.github.com/repos/yiisoft/yii2-smarty/zipball/8d46508a8c71a2d35939f6ec241bddfe48a45b44",
-            "reference": "8d46508a8c71a2d35939f6ec241bddfe48a45b44",
-            "shasum": ""
-        },
-        "require": {
-            "smarty/smarty": "*",
-            "yiisoft/yii2": "*"
-        },
-        "time": "2015-05-25 21:12:53",
-        "type": "yii2-extension",
-        "extra": {
-            "branch-alias": {
-                "dev-master": "2.0.x-dev"
-            },
-            "asset-installer-paths": {
-                "npm-asset-library": "vendor/npm",
-                "bower-asset-library": "vendor/bower"
-            }
-        },
-        "installation-source": "source",
-        "autoload": {
-            "psr-4": {
-                "yii\\smarty\\": ""
-            }
-        },
-        "notification-url": "https://packagist.org/downloads/",
-        "license": [
-            "BSD-3-Clause"
-        ],
-        "authors": [
-            {
-                "name": "Alexander Makarov",
-                "email": "sam@rmcreative.ru"
-            }
-        ],
-        "description": "The Smarty integration for the Yii framework",
-        "keywords": [
-            "renderer",
-            "smarty",
-            "yii2"
         ]
     },
     {
@@ -1286,6 +1181,56 @@
         ]
     },
     {
+        "name": "yiisoft/yii2-authclient",
+        "version": "dev-master",
+        "version_normalized": "9999999-dev",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/yiisoft/yii2-authclient.git",
+            "reference": "c25b04a34ab1b9ae4f2f7a35aeee38033ad3654d"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/yiisoft/yii2-authclient/zipball/c25b04a34ab1b9ae4f2f7a35aeee38033ad3654d",
+            "reference": "c25b04a34ab1b9ae4f2f7a35aeee38033ad3654d",
+            "shasum": ""
+        },
+        "require": {
+            "ext-curl": "*",
+            "yiisoft/yii2": ">=2.0.4"
+        },
+        "time": "2015-05-31 10:44:46",
+        "type": "yii2-extension",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "2.0.x-dev"
+            }
+        },
+        "installation-source": "source",
+        "autoload": {
+            "psr-4": {
+                "yii\\authclient\\": ""
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "BSD-3-Clause"
+        ],
+        "authors": [
+            {
+                "name": "Paul Klimov",
+                "email": "klimov.paul@gmail.com"
+            }
+        ],
+        "description": "External authentication via OAuth and OpenID for the Yii framework",
+        "keywords": [
+            "OpenId",
+            "auth",
+            "oauth",
+            "yii2"
+        ]
+    },
+    {
         "name": "smarty/smarty",
         "version": "dev-master",
         "version_normalized": "9999999-dev",
@@ -1343,35 +1288,39 @@
         ]
     },
     {
-        "name": "yiisoft/yii2-authclient",
+        "name": "yiisoft/yii2-smarty",
         "version": "dev-master",
         "version_normalized": "9999999-dev",
         "source": {
             "type": "git",
-            "url": "https://github.com/yiisoft/yii2-authclient.git",
-            "reference": "c25b04a34ab1b9ae4f2f7a35aeee38033ad3654d"
+            "url": "https://github.com/yiisoft/yii2-smarty.git",
+            "reference": "8d46508a8c71a2d35939f6ec241bddfe48a45b44"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/yiisoft/yii2-authclient/zipball/c25b04a34ab1b9ae4f2f7a35aeee38033ad3654d",
-            "reference": "c25b04a34ab1b9ae4f2f7a35aeee38033ad3654d",
+            "url": "https://api.github.com/repos/yiisoft/yii2-smarty/zipball/8d46508a8c71a2d35939f6ec241bddfe48a45b44",
+            "reference": "8d46508a8c71a2d35939f6ec241bddfe48a45b44",
             "shasum": ""
         },
         "require": {
-            "ext-curl": "*",
-            "yiisoft/yii2": ">=2.0.4"
+            "smarty/smarty": "*",
+            "yiisoft/yii2": "*"
         },
-        "time": "2015-05-31 10:44:46",
+        "time": "2015-05-25 21:12:53",
         "type": "yii2-extension",
         "extra": {
             "branch-alias": {
                 "dev-master": "2.0.x-dev"
+            },
+            "asset-installer-paths": {
+                "npm-asset-library": "vendor/npm",
+                "bower-asset-library": "vendor/bower"
             }
         },
         "installation-source": "source",
         "autoload": {
             "psr-4": {
-                "yii\\authclient\\": ""
+                "yii\\smarty\\": ""
             }
         },
         "notification-url": "https://packagist.org/downloads/",
@@ -1380,16 +1329,67 @@
         ],
         "authors": [
             {
-                "name": "Paul Klimov",
-                "email": "klimov.paul@gmail.com"
+                "name": "Alexander Makarov",
+                "email": "sam@rmcreative.ru"
             }
         ],
-        "description": "External authentication via OAuth and OpenID for the Yii framework",
+        "description": "The Smarty integration for the Yii framework",
         "keywords": [
-            "OpenId",
-            "auth",
-            "oauth",
+            "renderer",
+            "smarty",
             "yii2"
+        ]
+    },
+    {
+        "name": "nategood/httpful",
+        "version": "dev-master",
+        "version_normalized": "9999999-dev",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/nategood/httpful.git",
+            "reference": "56c45758cf21100c432ae478c61307a1e412fed7"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/nategood/httpful/zipball/56c45758cf21100c432ae478c61307a1e412fed7",
+            "reference": "56c45758cf21100c432ae478c61307a1e412fed7",
+            "shasum": ""
+        },
+        "require": {
+            "ext-curl": "*",
+            "php": ">=5.3"
+        },
+        "require-dev": {
+            "phpunit/phpunit": "*"
+        },
+        "time": "2015-05-19 18:49:40",
+        "type": "library",
+        "installation-source": "source",
+        "autoload": {
+            "psr-0": {
+                "Httpful": "src/"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Nate Good",
+                "email": "me@nategood.com",
+                "homepage": "http://nategood.com"
+            }
+        ],
+        "description": "A Readable, Chainable, REST friendly, PHP HTTP Client",
+        "homepage": "http://github.com/nategood/httpful",
+        "keywords": [
+            "api",
+            "curl",
+            "http",
+            "requests",
+            "rest",
+            "restful"
         ]
     }
 ]
