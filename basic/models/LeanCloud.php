@@ -28,7 +28,7 @@ class LeanCloud extends \yii\base\Object
         return $response->body;
     }
 
-    public function get($class='', $data=array(), $where=''){
+    public function get($class='', $data=array(), $where=array()){
         if(empty($data)){
             $uri = $this->config['base'].$class;
         }else{

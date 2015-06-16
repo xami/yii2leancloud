@@ -63,7 +63,7 @@ class User extends \yii\base\Model implements \yii\web\IdentityInterface
 
         //只信任直接调取接口的数据
         $user_cloud=new \stdClass();
-        $get_cloud = Yii::$app->LeanCloud->get('users', ['username'=>$username]);
+        $get_cloud = Yii::$app->LeanCloud->get('users', [], ['username'=>$username]);
         if(isset($get_cloud->results[0])){
             $user_cloud = $get_cloud->results[0];
         }
