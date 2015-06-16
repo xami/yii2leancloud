@@ -57,7 +57,7 @@ class SiteController extends Controller
         $attributes = $client->getUserAttributes();
         $token = $client->getAccessToken();
         $data['authData'][$client->clientId] = [
-            'openid'=>$attributes->openid,
+            'openid'=>$attributes['openid'],
             'access_token'=>$token->getToken(),
             'expires_in'=>getExpireDuration(),
         ];
