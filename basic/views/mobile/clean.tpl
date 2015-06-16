@@ -709,7 +709,7 @@
                     }else{
                         //关闭登录窗口，更新购物车
                         $("#Login-page").hide();
-                        Clean.update_cart();
+//                        Clean.update_cart();
                     }
                 }
             },100);

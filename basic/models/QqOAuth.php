@@ -52,7 +52,7 @@ class QqOAuth extends OAuth2
         return $qquser;
     }
 
-    protected function defaultName()
+    public function defaultName()
     {
         return 'qq';
     }

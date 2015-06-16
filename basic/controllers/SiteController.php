@@ -56,11 +56,22 @@ class SiteController extends Controller
     {
         $attributes = $client->getUserAttributes();
         $token = $client->getAccessToken();
-        $data['authData'][$client->clientId] = [
-            'openid'=>$attributes['openid'],
-            'access_token'=>$token->getToken(),
-            'expires_in'=>$token->getExpireDuration(),
-        ];
+
+        //qq登陆
+        if($client->defaultName() == 'qq'){
+            $data['authData'][$client->defaultName()] = [
+                'openid'=>$attributes['openid'],
+                'nickname'=>$attributes['nickname'],
+                'access_token'=>$token->getToken(),
+                'expires_in'=>$token->getExpireDuration(),
+            ];
+        }
+
+        //调用接口实现账号链接，现在只简单的实现了直接用第三方账号的权证来登陆
+        //todo:账号绑定
+
+
+
 
         \Yii::error(json_encode($data));
         // user login or signup comes here
