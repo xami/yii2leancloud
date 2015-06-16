@@ -77,9 +77,11 @@ class SiteController extends Controller
         if(!empty($data)){
             $c = Yii::$app->LeanCloud;
             $r = $c->post('users', $data);
+            \Yii::error(json_encode($r));
             $model = User::findByUsername($r->username);
-            if(!empty($model)){
+            if(isset($r->sessionToken) && !empty($model)){
                 $model->sessionToken = $r->sessionToken;
+                \Yii::error(json_encode($model));
                 return Yii::$app->user->login($model, $rememberMe ? 3600*24*30 : 7200);
             }
         }
