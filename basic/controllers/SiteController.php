@@ -55,7 +55,7 @@ class SiteController extends Controller
     public function successCallback($client)
     {
         $attributes = $client->getUserAttributes();
-        $token = $client->getAccessToken();
+        $token = $client->getAccessToken()->getToken();
 
         \Yii::error(json_encode($token));
         \Yii::error(json_encode($attributes));
