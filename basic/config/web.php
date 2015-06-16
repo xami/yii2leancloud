@@ -95,6 +95,11 @@ $config = [
                     'clientId'=>'101222737',
                     'clientSecret'=>'02174f9b2f5ddcff31309fb85306f4ad'
                 ],
+                'weibo' => [
+                    'class'=>'xj\oauth\WeiboOAuth',
+                    'clientId'=>'220182371',
+                    'clientSecret'=>'490950e0d8967c7d91aef8a9393b88ab'
+                ],
             ],
         ],
         'db' => require(__DIR__ . '/db.php'),

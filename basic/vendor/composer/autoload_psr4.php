@@ -17,6 +17,7 @@ return array(
     'yii\\bootstrap\\' => array($vendorDir . '/yiisoft/yii2-bootstrap'),
     'yii\\authclient\\' => array($vendorDir . '/yiisoft/yii2-authclient'),
     'yii\\' => array($vendorDir . '/yiisoft/yii2'),
+    'xj\\oauth\\' => array($vendorDir . '/xj/yii2-oauth'),
     'cebe\\markdown\\' => array($vendorDir . '/cebe/markdown'),
     'Fxp\\Composer\\AssetPlugin\\' => array($vendorDir . '/fxp/composer-asset-plugin'),
     'Faker\\' => array($vendorDir . '/fzaninotto/faker/src/Faker'),

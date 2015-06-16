@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "b36388e49af75dd8f10e070010efbc29",
+    "hash": "cd3e6198e7889afb83da6afab89bac34",
     "packages": [
         {
             "name": "bower-asset/bootstrap",
@@ -494,12 +494,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/smarty-php/smarty.git",
-                "reference": "3bb22560c00ab6a0648c0f6308c3dfa900994c19"
+                "reference": "58616d6ee598674b682f8a2b81352ec4da7100c7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/smarty-php/smarty/zipball/3bb22560c00ab6a0648c0f6308c3dfa900994c19",
-                "reference": "3bb22560c00ab6a0648c0f6308c3dfa900994c19",
+                "url": "https://api.github.com/repos/smarty-php/smarty/zipball/58616d6ee598674b682f8a2b81352ec4da7100c7",
+                "reference": "58616d6ee598674b682f8a2b81352ec4da7100c7",
                 "shasum": ""
             },
             "require": {
@@ -541,7 +541,7 @@
             "keywords": [
                 "templating"
             ],
-            "time": "2015-06-14 02:26:37"
+            "time": "2015-06-15 22:23:24"
         },
         {
             "name": "swiftmailer/swiftmailer",
@@ -654,17 +654,54 @@
             "time": "2015-06-06 23:35:59"
         },
         {
+            "name": "xj/yii2-oauth",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/xjflyttp/yii2-oauth.git",
+                "reference": "5fb6e6f8bc7db990425b23f6c451e57ef765ccd8"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/xjflyttp/yii2-oauth/zipball/5fb6e6f8bc7db990425b23f6c451e57ef765ccd8",
+                "reference": "5fb6e6f8bc7db990425b23f6c451e57ef765ccd8",
+                "shasum": ""
+            },
+            "require": {
+                "yiisoft/yii2": "*",
+                "yiisoft/yii2-authclient": "*"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "xj\\oauth\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "xjflyttp",
+                    "email": "xjflyttp@gmail.com"
+                }
+            ],
+            "description": "yii2-oauth",
+            "time": "2015-04-21 07:07:18"
+        },
+        {
             "name": "yiisoft/yii2",
             "version": "dev-master",
             "source": {
                 "type": "git",
                 "url": "https://github.com/yiisoft/yii2-framework.git",
-                "reference": "3085bec3ff42140846652c300cc75315c26126a8"
+                "reference": "bfa5a597269e89f946a0b44ef408ef6142ada2a9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/yiisoft/yii2-framework/zipball/3085bec3ff42140846652c300cc75315c26126a8",
-                "reference": "3085bec3ff42140846652c300cc75315c26126a8",
+                "url": "https://api.github.com/repos/yiisoft/yii2-framework/zipball/bfa5a597269e89f946a0b44ef408ef6142ada2a9",
+                "reference": "bfa5a597269e89f946a0b44ef408ef6142ada2a9",
                 "shasum": ""
             },
             "require": {
@@ -739,7 +776,7 @@
                 "framework",
                 "yii2"
             ],
-            "time": "2015-06-14 23:34:35"
+            "time": "2015-06-15 13:50:49"
         },
         {
             "name": "yiisoft/yii2-authclient",

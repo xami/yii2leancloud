@@ -20,6 +20,7 @@ AppAsset::register($this);
     <title><?= Html::encode($this->title) ?></title>
     <?php $this->head() ?>
     <meta property="qc:admins" content="404136211124516347546745256375" />
+    <meta property="wb:webmaster" content="35587023fa31ae8c" />
 </head>
 <body>
 

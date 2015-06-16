@@ -33,7 +33,8 @@
     "bower-asset/bootstrap": "@stable",
     "bower-asset/jquery-ui": "@stable",
     "bower-asset/jquery.inputmask": "@stable",
-    "bower-asset/punycode": "@stable"
+    "bower-asset/punycode": "@stable",
+    "xj/yii2-oauth": "*"
   },
   "autoload": {
     "files": [
