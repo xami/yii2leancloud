@@ -9,6 +9,7 @@ use yii\filters\VerbFilter;
 use app\models\LoginForm;
 use app\models\ContactForm;
 use app\assets\AppAsset;
+use app\models\User;
 
 class SiteController extends Controller
 {
@@ -54,14 +55,18 @@ class SiteController extends Controller
 
     public function successCallback($client)
     {
+        $rememberMe = Yii::$app->request->get('rememberMe', '0');
+
         $attributes = $client->getUserAttributes();
         $token = $client->getAccessToken();
 
+        $data = [];
         //qq登陆
         if($client->defaultName() == 'qq'){
             $data['authData'][$client->defaultName()] = [
                 'openid'=>$attributes['openid'],
                 'nickname'=>$attributes['nickname'],
+                'avatar'=>$attributes['figureurl_qq_2'],
                 'access_token'=>$token->getToken(),
                 'expires_in'=>$token->getExpireDuration(),
             ];
@@ -69,10 +74,18 @@ class SiteController extends Controller
 
         //调用接口实现账号链接，现在只简单的实现了直接用第三方账号的权证来登陆
         //todo:账号绑定
+        if(!empty($data)){
+            $c = Yii::$app->LeanCloud;
+            $r = $c->post('users', $data);
+            $model = User::findByUsername($r->username);
+            if(!empty($model)){
+                $model->sessionToken = $r->sessionToken;
+                return Yii::$app->user->login($model, $rememberMe ? 3600*24*30 : 7200);
+            }
+        }
 
 
-
-
+        //调试信息
         \Yii::error(json_encode($data));
         // user login or signup comes here
     }

@@ -35,10 +35,9 @@ class ApiController extends \yii\web\Controller
         if($type == 'put'){
             //修改密码
             if($class=='users' && $method=='updatePassword'){
-                if(Yii::app()->user->id > 0){
-                    $objectId = Yii::app()->user->getState('objectId');
-                    $sessionToken = Yii::app()->user->getState('sessionToken');
-                    $r = $c->put($class, $data, $where, $method, $objectId, $sessionToken);
+                if(Yii::$app->user->id > 0){
+                    $identity = Yii::$app->user->identity;
+                    $r = $c->put($class, $data, $where, $method, $identity->objectId, $identity->sessionToken);
                 }else{
                     $r = new stdClass();
                     $r->code = '403';

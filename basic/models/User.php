@@ -17,6 +17,9 @@ class User extends \yii\base\Model implements \yii\web\IdentityInterface
     public $lastvisit_at;
     public $mobilePhoneNumber;
     public $sessionToken;
+    public $objectId;
+    public $nickname;
+    public $avatar;
 
     /**
      * @inheritdoc
@@ -71,6 +74,7 @@ class User extends \yii\base\Model implements \yii\web\IdentityInterface
         //先本地查询，再接口查询
         if(!empty($user)){
             if(!empty($user_cloud)){
+                $user->objectId = $user_cloud->objectId;
                 $user->email = isset($user_cloud->email) ? $user_cloud->email : '';
                 $user->mobilePhoneNumber = isset($user_cloud->mobilePhoneNumber) ? $user_cloud->mobilePhoneNumber : '';
                 $user->lastvisit_at = date("Y-m-d H:i:s", strtotime($user_cloud->updatedAt));
@@ -84,6 +88,7 @@ class User extends \yii\base\Model implements \yii\web\IdentityInterface
             if(!empty($user_cloud)){
                 $user = new Users;
                 $user->username = $user_cloud->username;
+                $user->objectId = $user_cloud->objectId;
                 $user->email = isset($user_cloud->email) ? $user_cloud->email : '';
                 $user->mobilePhoneNumber = isset($user_cloud->mobilePhoneNumber) ? $user_cloud->mobilePhoneNumber : '';
                 $user->superuser = 0;
