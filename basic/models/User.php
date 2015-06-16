@@ -67,6 +67,7 @@ class User extends \yii\base\Model implements \yii\web\IdentityInterface
         if(isset($get_cloud->results[0])){
             $user_cloud = $get_cloud->results[0];
         }
+        \Yii::error(json_encode($user_cloud));
 
         $model = new self();
 

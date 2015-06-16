@@ -79,9 +79,9 @@ class SiteController extends Controller
             $r = $c->post('users', $data);
             \Yii::error(json_encode($r));
             $model = User::findByUsername($r->username);
+            \Yii::error(json_encode($model));
             if(isset($r->sessionToken) && !empty($model)){
                 $model->sessionToken = $r->sessionToken;
-                \Yii::error(json_encode($model));
                 return Yii::$app->user->login($model, $rememberMe ? 3600*24*30 : 7200);
             }
         }
