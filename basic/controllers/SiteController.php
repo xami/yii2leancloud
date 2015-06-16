@@ -59,7 +59,7 @@ class SiteController extends Controller
         $data['authData'][$client->clientId] = [
             'openid'=>$attributes['openid'],
             'access_token'=>$token->getToken(),
-            'expires_in'=>getExpireDuration(),
+            'expires_in'=>$token->getExpireDuration(),
         ];
 
         \Yii::error(json_encode($data));
