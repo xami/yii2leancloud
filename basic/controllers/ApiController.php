@@ -23,6 +23,12 @@ class ApiController extends \yii\web\Controller
         return $this->render('index');
     }
 
+    public function actionTest(){
+        $username = Yii::$app->request->get('username', '');
+        $model = User::findByUsername($username);
+        pd($model);
+    }
+
     public function actionRest(){
         $class = Yii::$app->request->get('class', '');
         $method = Yii::$app->request->get('method', '');

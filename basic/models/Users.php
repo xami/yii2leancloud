@@ -39,7 +39,7 @@ class Users extends \yii\db\ActiveRecord
 //            [['email', 'mobilePhoneNumber'], 'required'],
             [['superuser', 'status'], 'integer'],
             [['create_at', 'lastvisit_at'], 'safe'],
-            [['username'], 'string', 'max' => 20],
+            [['username'], 'string', 'max' => 32],
             [['password', 'email', 'activkey'], 'string', 'max' => 128],
             [['mobilePhoneNumber','objectId'], 'string', 'max' => 32],
             [['sessionToken','nickname'], 'string', 'max' => 64],

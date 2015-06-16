@@ -71,7 +71,6 @@ class User extends \yii\base\Model implements \yii\web\IdentityInterface
 
         $model = new self();
 
-
         //先本地查询，再接口查询
         if(!empty($user)){
             if(!empty($user_cloud)){
@@ -96,6 +95,12 @@ class User extends \yii\base\Model implements \yii\web\IdentityInterface
                 $user->status = 1;
                 $user->create_at = date("Y-m-d H:i:s", strtotime($user_cloud->createdAt));
                 $user->lastvisit_at = date("Y-m-d H:i:s", strtotime($user_cloud->updatedAt));
+
+                //复制qq头像、昵称到本地用户表
+                if(isset($user_cloud->authData->qq)){
+                    $user->nickname = $user_cloud->authData->qq->nickname;
+                    $user->avatar = $user_cloud->authData->qq->avatar;
+                }
 
                 if($user->save()){
                     $model->setAttributes($user->attributes, false);
