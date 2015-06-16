@@ -55,10 +55,14 @@ class SiteController extends Controller
     public function successCallback($client)
     {
         $attributes = $client->getUserAttributes();
-        $token = $client->getAccessToken()->getToken();
+        $token = $client->getAccessToken();
+        $data['authData'][$client->defaultName()] = [
+            'openid'=>$attributes->openid,
+            'access_token'=>$token->getToken(),
+            'expires_in'=>getExpireDuration(),
+        ];
 
-        \Yii::error(json_encode($token));
-        \Yii::error(json_encode($attributes));
+        \Yii::error(json_encode($data));
         // user login or signup comes here
     }
 
