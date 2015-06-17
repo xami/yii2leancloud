@@ -96,7 +96,7 @@ $config = [
                     'clientSecret'=>'02174f9b2f5ddcff31309fb85306f4ad'
                 ],
                 'weibo' => [
-                    'class'=>'xj\oauth\WeiboOAuth',
+                    'class'=>'xj\oauth\WeiboAuth',
                     'clientId'=>'1950437863',
                     'clientSecret'=>'8717c37675de5ce93e6518d36bbe23c3'
                 ],
